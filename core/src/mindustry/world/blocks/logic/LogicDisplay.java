@@ -107,16 +107,7 @@ public class LogicDisplay extends Block{
             Draw.blend(Blending.disabled);
             Draw.draw(Draw.z(), () -> {
                 if(buffer != null){
-                    Draw.rect(Draw.wrap(buffer.getTexture()), x, y, buffer.getWidth() * scaleFactor * Draw.scl, -buffer.getHeight() * scaleFactor * Draw.scl);
-                }
-            });
-
-            Draw.blend(Blending.disabled);
-            Draw.draw(Draw.z(), () -> {
-                if(buffer != null){
-                    // vanilla
                     if (Core.settings.getBool("drawdisplayborder")) Draw.rect(Draw.wrap(buffer.getTexture()), x, y, buffer.getWidth() * scaleFactor * Draw.scl, -buffer.getHeight() * scaleFactor * Draw.scl);
-                    // foo's borderless displays FINISHME: Implement scaleFactor
                     else Draw.rect(Draw.wrap(buffer.getTexture()), x, y, 32 * size * Draw.scl, -32 * size * Draw.scl);
                 }
             });
